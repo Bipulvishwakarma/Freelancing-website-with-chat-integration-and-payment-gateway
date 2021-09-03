@@ -1,0 +1,31 @@
+{% extends 'enroll/base.html' %}
+
+{% block title %}search{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+    
+{% endif %}  
+<div class="row">  
+{% for product in products %}
+		<div class="col-lg-4">
+    
+
+			<img class="thumbnail" src="{{product.image.url}}">
+		</a>
+			<div class="box-element product">
+				<h6><strong>{{product.name}}</strong></h6>
+				<hr>
+
+				<button data-product={{product.id}} data-action='add' class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+				<a class="btn btn-outline-success" href="{% url 'cart' %}">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+
+			</div>
+
+		</div>
+    
+{% endfor %}
+
+{% endblock %}

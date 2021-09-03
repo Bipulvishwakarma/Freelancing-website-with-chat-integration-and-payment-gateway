@@ -1,0 +1,32 @@
+{% extends 'enroll/base2.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content2 %}
+<html>
+<head>
+<style>
+</style>
+</head>
+<title> User registration </title>
+<body>
+<h2>User registration </h2>
+<div class='container'>
+<div class='container'>
+{%csrf_token%}
+<div class="form-group">
+<form action='' method='POST'>
+{% csrf_token %}
+
+{% for fm in form %}
+    {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}  <br> <br>
+{% endfor %} 
+<button type='submit' class="button is primary"> Sign Up</button>
+<a href='{% url 'login' %}'>Login</a>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
+{%endblock content2%}

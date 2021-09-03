@@ -1,0 +1,22 @@
+{%extends 'enroll/base.html'%}
+{% block content2 %}
+{% load static %}
+<html>
+<head>
+</head>
+<body>
+<h4> Create an order </h4>
+<div class='container'>
+<div class='box-element'>
+    <form action="" method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+<input type="submit" class="btn btn-sm btn-outline-secondary">
+</form>
+</div>
+</div>
+
+</body>
+</html>
+
+{%endblock content2%}

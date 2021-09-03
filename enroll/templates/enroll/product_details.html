@@ -1,0 +1,38 @@
+{% extends 'enroll/base.html' %}
+{%block content%} 
+{%load static%}     
+<html>
+
+<head>
+	<title></title>
+	<meta id="meta" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+</head>
+<body>
+<h5> this is details page</h5>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg">
+				<br>
+			<img class="thumbnail" src="{{product.image.url}}">
+			</div>
+			<div class="col-lg">
+				<br>
+				<div class="card card-body">
+					<h3>{{product.name}}</h3>
+					<hr>
+					<h4>Total: ${{product.price|floatformat:2}}</h4>
+					<hr>
+					<div id="paypal-button-container"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
+{% endblock content %}

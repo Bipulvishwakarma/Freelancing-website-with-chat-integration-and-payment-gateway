@@ -1,0 +1,75 @@
+{% extends 'enroll/base2.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content2 %}
+{% load static %}
+<html>
+{%csrf_token%}
+<head>
+<style>
+.center{
+    text-align:center
+}
+.imgcontainer {
+  text-align: center;
+  margin: 60px 0 12px 0;
+}
+img.avatar {
+  width: 25%;
+  border-radius: 50%;
+}
+input,
+.btn {
+text-decoration: none;
+}
+
+.fb {
+  background-color: #3B5998;
+  color: white;
+  
+.bottom-container {
+  text-align: center;
+  background-color: #123;
+  border-radius: 0px 0px 4px 4px;
+}
+
+
+</style>
+</head>
+<body>
+ 
+<div class="imgcontainer">
+    <img src="{% static 'enroll/images/userlogin.png' %}" id="imgcontainer" alt="Avatar" class="avatar"  alt='Django'/>
+  
+<br>
+<br>
+<div class='centre'>
+  <div class='box-element'>
+  <div class="form-group">
+    <form action="" method="post" novalidate>
+    {% csrf_token %}
+
+    {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}  <br> <br>
+    {% endfor %}    
+    <button type="submit" class="btn btn-primary">login</button> &nbsp;
+    
+    <button class="btn btn-light"> <a href='{% url 'signup' %}'>Signup</a>  </button>
+
+    </form>
+    </div>
+    <br>
+    <div class='container'>
+
+    <button class="btn btn-outline-dark"> <a href="{% url 'social:begin' 'github' %}">Login with GitHub</a> </button>
+    
+    <button class="btn btn-outline-dark"> <a  href="{% url 'social:begin' 'facebook' %}">Login with facebook</a></button>
+    </div> 
+
+</div> 
+</div>   
+</div>
+</body>
+</html>
+{%endblock content2%}

@@ -1,0 +1,21 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>HTML Image as link</title>
+   </head>
+   <body>
+     
+    <p>
+   <a href="{% url 'cart' %}">
+	   <img src="{% static 'enroll/images/cart1.png' %}" id="imgcontainer" alt="Avatar" class="avatar"  alt='Django'  alt='Django'/>
+      <img src="{% static 'enroll/images/my2.jpg' %}" id="imgcontainer" alt="Avatar" class="avatar"  alt='Django' alt='Django'/>
+	</a>
+    </p>
+</body>
+</html>
+{% endblock content %}

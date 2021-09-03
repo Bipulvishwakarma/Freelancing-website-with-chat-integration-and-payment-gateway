@@ -1,0 +1,35 @@
+{% extends 'enroll/base.html' %}
+{% block content%}
+{% load static %}
+<h3>this is customer page</h3>
+<head>
+<style>
+body {
+  background-image: url('my.jpg');
+}
+</style>
+</head>
+<body>
+<div class='container'>
+    <form action="" method="POST">
+     {% csrf_token %} 
+<div class="form-group">
+    <label for="title">Name</label>
+    <input type="text" class="form-control" name="name" aria-describedby="name"> 
+    <small id="emailHelp" class="form-text text-muted">We'll never share your details</small>
+</div>
+
+<div class="form-group">
+    <label for="title">Email</label>
+    <input type="text"class="form-control" name="email" aria-describedby="email"> 
+    <small id="emailHelp" class="form-text text-muted">Enter your E-mail</small>
+
+</div>
+    <button type="submit" class="btn btn-sm btn-outline-secondary">Submit</button>
+   
+</div>
+</form>
+</body>
+</html>
+
+{% endblock content %}

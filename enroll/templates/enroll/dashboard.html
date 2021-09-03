@@ -1,0 +1,64 @@
+{% extends 'enroll/base.html' %}
+
+{% block content %}
+{% include 'enroll/status.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Dashboard</title>
+</head>
+<body>
+<br>
+
+<div class='row'>
+    <div class='col-md-5'>
+        <h5>Customers: </h5>
+        <hr>
+        <div class='card card-body'>
+            <a class='btn btn-primary btn-sm btn-block' href="{% url 'customer'%}" >Create Customer</a>
+            <table class='table table-sm'>
+                <tr>
+                    
+                    <th>Customer</th>
+                    <th>E-mail</th>
+                    <th></th>
+                </tr> 
+
+                {% for customer in customers %}
+                    <tr>
+
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.email}}</td>
+                    </tr>
+                {% endfor %}     
+            </table>
+        </div> 
+    </div>    
+
+    <div class='col-md-6'>
+    <h5>Orders: </h5>
+    <hr>
+    <div class='card card-body'>
+        <a class='btn btn-primary btn-sm btn-block' href="" ></a>
+        <table class='table table-sm'>
+            <tr>
+                
+                <th>customer</th>
+                <th>status</th>
+            </tr> 
+            {% for order in orders %}
+                    <tr>
+                        <td>{{order.customer}}</td>
+                        <td>{{order.complete}}</td>
+                    </tr>
+                {% endfor %}   
+                
+        </table>
+    </div> 
+</div>
+</div>
+
+</body>
+</html>
+{%endblock content%}

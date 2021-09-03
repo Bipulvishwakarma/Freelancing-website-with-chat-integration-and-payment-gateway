@@ -1,0 +1,29 @@
+{%extends 'enroll/base3.html'%}
+{% block content3 %}
+{% load static %}
+<html>
+<head>
+</head>
+<body>
+<div class='box-element'>
+<div class='container'>
+<h5>Register your product here !</h5>
+    <div class='box-element'>
+        <form action='' method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class='container'>
+        {{form.as_p}}
+        </div>
+
+    </div>
+</div>
+<div class='container'>
+<input type="submit" class="btn btn-sm btn-outline-secondary">
+</div>
+</div>
+</form>
+
+</body>
+</html>
+
+{%endblock content3%}
